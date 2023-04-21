@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
-import { url } from "../App";
+import { url } from "../../App";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function MentorLogin() {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let navigate = useNavigate();
@@ -25,7 +25,7 @@ function Login() {
       //to store in session storage
       sessionStorage.setItem("token", res.data.token);
       //after login and storing navigate to dashboard
-      navigate("/dashboard");
+      navigate("/dashboard/mentordashboard");
       console.log(res);
     } catch (error) {
       console.log(error);
@@ -35,7 +35,6 @@ function Login() {
   };
   return (
     <div className="login-wrapper">
-      <h1 style={{ textAlign: "center" }}>Login Here</h1>
       <Form>
         <Form.Group className="mb-3">
           <Form.Label>Email address</Form.Label>
@@ -63,4 +62,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default MentorLogin;

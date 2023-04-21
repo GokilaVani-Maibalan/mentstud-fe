@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { url } from "../App";
+import { url } from "../../App";
 import { toast } from "react-toastify";
 import Button from "react-bootstrap/esm/Button";
 
-function Dashboard() {
+function MentorDashboard() {
   let [data, setData] = useState([]);
   let token = sessionStorage.getItem("token");
   let navigate = useNavigate();
 
   let logout = () => {
     sessionStorage.clear();
-    navigate("/login");
+    navigate("/login/mentorlogin");
   };
 
   let getData = async () => {
@@ -67,4 +67,4 @@ function Dashboard() {
     </>
   );
 }
-export default Dashboard;
+export default MentorDashboard;
