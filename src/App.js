@@ -5,6 +5,9 @@ import MentorLogin from "./components/nestedLogin/MentorLogin";
 import StudentLogin from "./components/nestedLogin/StudentLogin";
 import MentorDashboard from "./components/nestedDashboard/MentorDashboard";
 import StudentDashboard from "./components/nestedDashboard/StudentDashboard";
+import Signup from "./components/nestedSignup/Signup";
+import MentorSignup from "./components/nestedSignup/MentorSignup";
+import StudentSignup from "./components/nestedSignup/StudentSignup";
 
 export const url = "http://localhost:3000";
 
@@ -19,6 +22,10 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="mentordashboard" element={<MentorDashboard />} />
           <Route path="studentdashboard" element={<StudentDashboard />} />
+        </Route>
+        <Route path="/signup" element={<Signup />}>
+          <Route path="mentorsignup" element={<MentorSignup />} />
+          <Route path="studentsignup" element={<StudentSignup />} />
         </Route>
         <Route path="/*" element={<Navigate to="/login" />} />
       </Routes>
